@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Template Engine (#{title})
+    style.
+      .paragraph {
+        margin: 0.6em 10% 0.8em !important;
+        color: red;
+      }
+      #circle {
+        background-color: tomato;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%
+      }
+  body 
+    include ./header.pug
+    h1 This is a #{heading}
+    h3=title 
+       this is heading 2
+    p.paragraph Lorem ipsum dolor sit amet.
+    div#circle
+
+    if(title)
+      a(href="#") #{title}
+    else
+      a(href="#") not found 
+    include ./footer.pug
+    //- script.
+    //-   alert("hello")
